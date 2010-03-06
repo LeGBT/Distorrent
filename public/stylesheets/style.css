@@ -1,0 +1,188 @@
+html {height:100%;}
+body { 
+	//background-color: #1f2126; 
+	background-color: #d9d9d9; 
+	color: #d9d9d9;
+	height:100%;
+	margin:0;
+}
+
+body, p, ol, ul, td {
+  font-family: Tahoma, Geneva, Kalimati, sans-serif;
+  font-size:   90%;
+  line-height: 190%;
+  text-align: center;
+}
+
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+a { color: #000; }
+a:visited { color: #666; }
+a:hover { color: #fff; background-color:#000; }
+
+.fieldWithErrors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+
+#letout{
+	height:100%;
+	margin:auto;
+	min-width:800px;
+}
+
+#lestab{
+	//background-image: url("images/tab.png");
+	margin:0 auto;
+	width: 800px;
+	height:40px;
+}
+
+#lestab li{
+	display:inline;
+}
+
+#lestab li a:link, #lestab li a:visited {
+	display:block;
+	float:left;
+	height:32px;
+	font-size:1.5em;
+	font-weight:bolder;
+	line-height:32px;
+	text-decoration:none;
+	text-align:center;
+	background: url('images/atab.png') repeat-x;
+	padding:0 20px;
+	//color:#d9d9d9;
+	color:#052026;
+}
+
+#lestab li a:hover, #lestab li a:active{
+	background:url('images/atab.png') 0  -32px;
+	padding:0 20px;	
+	color:#239bb3
+}
+
+
+#lecentre{
+	width:760px;
+	//background-color: #36393D;
+	background-image: url("images/lecentre2.png");
+	background-repeat: x;
+	margin:0 auto;
+	//background-position:0px 0px;
+	padding-left:20px;
+	padding-right:20px;
+	padding-top:1px;
+}
+
+//#bordbasducentre{
+//	width:800px;
+//	height:55px;
+//	background-image: url("images/lesbordsducentre.png");
+//	background-position:0px 40px;
+//	margin: auto;
+//	padding-left:20px;
+//	padding-right:20px;
+//}
+
+#bordure{
+	//height: 190px;
+	//background-color: #1f2126;
+  //	background-image: url("images/teteombre.png");
+}
+
+#bordure .centre{
+	width:800px;
+	height:20px;
+	background-image: url("images/teteombrecentre.png");
+	//background-position:0 0px;
+	margin:0 auto;
+	//padding-left:20px;
+	//padding-right:20px;
+}
+
+
+#latete{
+	//margin:0 auto;
+	//min-width:1024px;
+	height:200px;
+	//width:99.85%;
+	background-color: #d9d9d9;
+	//background-image: url("images/tete2.png");
+	//background-repeat: y;
+	//float:top;
+    //background-position: top left;
+	//color:#36393D;
+	//padding:1px;
+}
+
+#lepied{
+	height:140px;
+	width:760px;
+	margin:0 auto;
+	padding:20px;
+	//padding-top:20px;
+	//padding-bottom:20px;
+	//background-color: #052026;
+	background-image: url("images/footer.png");
+	background-repeat: y;
+}
+
+#lepied p{
+	font-size:0.8em;
+}
+
+a#filters {
+	margin:0 auto;
+	display:list-item;
+	height:40px;
+	width:170px;
+	background-image:url('images/filtersoff.png');
+	text-decoration: none; 
+}
+
+a#filters:hover {
+	background-image:url('images/filterson.png'); 
+	background-color: #1f2126;
+}
+
+
+
+
+#errorExplanation {
+  width: 400px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+#errorExplanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  background-color: #c00;
+  color: #fff;
+}
+
+#errorExplanation p {
+  color: #333;
+  margin-bottom: 0;
+  padding: 5px;
+}
+
+#errorExplanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+

@@ -1,0 +1,18 @@
+<p>
+  <b>Name:</b>
+  <%=h @filterlist.name %>
+</p>
+
+<p>
+  <b>Regexp:</b>
+  <%=h @filterlist.regexp %>
+</p>
+
+<p>
+  <b>Ep:</b>
+  <%=h @filterlist.ep %>
+</p>
+
+
+<%= link_to 'Edit', edit_filterlist_path(@filterlist) %> |
+<%= link_to 'Back', filterlists_path %>

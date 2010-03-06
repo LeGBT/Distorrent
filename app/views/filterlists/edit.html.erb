@@ -1,0 +1,24 @@
+<h1>Editing filterlist</h1>
+
+<% form_for(@filterlist) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :regexp %><br />
+    <%= f.text_field :regexp %>
+  </p>
+  <p>
+    <%= f.label :ep %><br />
+    <%= f.text_field :ep %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @filterlist %> |
+<%= link_to 'Back', filterlists_path %>
