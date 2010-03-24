@@ -1,40 +1,36 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html lang="fr">
 <head>
-  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+   <meta charset="utf-8">
+   <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
   <title>THOR <%= controller.action_name %></title>
   <%= stylesheet_link_tag 'style' %>
 </head>
 <body>
+<div id="lapage">
 
-<div id='letout'>
-	<div id='latete'>
-		<img src='../images/thor.png' alt='Thor'></img>
-			<div id='lestab'>
-				<ul>
-					<li><a href='../rsslists'>RSS</a></li>
-					<li><a href='../filterlists'>Filters</a></li>
-					<li><a href='../home/scan'>Scan</a></li>
-				</ul>
-			</div>
+	<header>
+	<div id="logo">
+		<img src='/images/thor.png' alt='Thor' />
 	</div>
-	<div>
-	</div>
-	<div id='bordure'>
-	<div class='centre'></div>
-	</div>
-	<div id='lecentre'>
+		<nav>
+			<ul>	
+				<li><%= link_to 'RSS',rsslists_path , :class => controller_name=='rsslists' %></li>
+				<li><%= link_to 'Filters', filterlists_path, :class => controller_name=='filterlists'  %></li>
+				<li><%= link_to 'Scan', {:controller => "home" , :action => "scan" }, :class => controller_name=='home' %></li>
+			</ul>	
+		</nav>
+	</header>
+	<section>
 		<p style="color: green"><%= flash[:notice] %></p>
 		<%= yield %>
-	</div>
-	<div id='lepied'>
-		<p position='0'>Design, concept and realisation : Alban Avenant.</p>
-	
-	</div>
+	</section>
+
+	<footer>
+		<p>Design, concept and realisation : Alban Avenant. </p>	
+	</footer>
+
 </div>
-
-
 </body>
 </html>
