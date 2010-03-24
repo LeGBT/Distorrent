@@ -1,22 +1,10 @@
-<h1>Listing rsslists</h1>
-
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Adress</th>
-  </tr>
 
 <% @rsslists.each do |rsslist| %>
-  <tr>
-    <td><%=h rsslist.name %></td>
-    <td><%=h rsslist.adress %></td>
-    <td><%= link_to 'Show', rsslist %></td>
-    <td><%= link_to 'Edit', edit_rsslist_path(rsslist) %></td>
-    <td><%= link_to 'Destroy', rsslist, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+		<div class="thename">  <%=h rsslist.name %>
+			<%=  link_to  rsslist.adress, rsslist, :class =>"theadress"   %>
+		</div>
+		<p></p>
 <% end %>
-</table>
 
-<br />
-
-<%= link_to 'New rsslist', new_rsslist_path %>
+<br/> 
+<%= link_to 'New rsslist', new_rsslist_path, :class=>"special" %>
