@@ -25,6 +25,7 @@ require 'distorrent/download'
 require 'distorrent/parsexml'
 #require 'xml-object'
 #require 'xml-object/adapters/libxml'
+config.gem 'sqlite3'
 config.gem 'rufus-scheduler', :lib=> "rufus/scheduler"
 config.gem 'httpclient'
 config.gem 'xml-object'
