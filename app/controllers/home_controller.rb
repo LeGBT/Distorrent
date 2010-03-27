@@ -17,7 +17,7 @@ class HomeController < ApplicationController
 					if /#{@tempreg}/xi.match(unparse.title[z]) then
 					lelien=unparse.link[z].gsub(/&lt;/,'<').gsub(/&gt;/,'>').gsub(/&apos;/,'\'').gsub(/&quot;/,'"').gsub(/&amp;/,'&') #correction de l'url
 						unless (lelien=="no link") then
-							nect = Dl.nectar2(lelien).gsub('/','')
+							nect = Dl.nectar2(lelien).gsub('/','').gsub(/torrent.*/,'torrent')
 							puts "nect : #{nect}"
 							if (/\.torrent/i.match("#{nect}")) then
 								Dl::down2(lelien.to_s,"#{nect}")
