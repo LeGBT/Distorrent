@@ -7,7 +7,7 @@ body{
 body, p, ol, td {
   font-family: Tahoma, Geneva, Kalimati, sans-serif;
   font-size:   90%;
-  line-height: 190%;
+  line-height: 100%;
   text-align: center;
 }
 
@@ -130,7 +130,8 @@ footer{
 
 .thename{
 	display:inline-block;  
-    padding:1px; 
+    padding:2px; 
+    margin:-10px;
 }
 
 
