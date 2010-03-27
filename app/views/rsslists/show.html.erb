@@ -11,8 +11,10 @@
 		<%=h @rsslist.adress %>
 	</div>
 </p>
+<p></p>
 <br/>
 
 
 <%= link_to 'Edit', edit_rsslist_path(@rsslist) , :class=> 'special' %>
+<%= link_to 'Destroy', @rsslist, :confirm => 'Are you sure?', :method => :delete , :class=>"special" %>
 <%= link_to 'Back', rsslists_path , :class=> 'special' %>
