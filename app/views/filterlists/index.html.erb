@@ -14,11 +14,11 @@
     <td><%=h filterlist.ep %></td>
     <td><%= link_to 'Show', filterlist %></td>
     <td><%= link_to 'Edit', edit_filterlist_path(filterlist) %></td>
-    <td><%= link_to 'Destroy', filterlist, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Destroy', filterlist, :confirm => 'Are you sure?', :method => :delete%></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New filterlist', new_filterlist_path %>
+<%= link_to 'New filterlist', new_filterlist_path,  :class=>"special"  %>
