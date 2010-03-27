@@ -15,12 +15,12 @@ class HomeController < ApplicationController
 				@filter.each do |afilter|								#parcour mes filtres
 					@tempreg = "(#{afilter.regexp}[^1-9]*#{afilter.ep})"
 					if /#{@tempreg}/xi.match(unparse.title[z]) then
-					lelien=unparse.link[z].gsub(/&lt;/,'<').gsub(/&gt;/,'>').gsub(/&apos;/,'\'').gsub(/&quot;/,'"').gsub(/&amp;/,'&').gsub('/','') #correction de l'url
+					lelien=unparse.link[z].gsub(/&lt;/,'<').gsub(/&gt;/,'>').gsub(/&apos;/,'\'').gsub(/&quot;/,'"').gsub(/&amp;/,'&') #correction de l'url
 						unless (lelien=="no link") then
 							nect = Dl.nectar2(lelien)
 							puts "nect : #{nect}"
 							if (/\.torrent/i.match("#{nect}")) then
-								Dl::down2(lelien.to_s,"#{nect}")
+								Dl::down2(lelien.gsub('/','').to_s,"#{nect}")
 								puts "#{nect}"
 								system("open '#{nect}'")
 								afilter.update_attribute('ep',afilter.ep+1)
