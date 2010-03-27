@@ -122,7 +122,8 @@ footer{
 }
 
 .special{
-    color:#111;
+    color:#fff;
+    background-Color:#022;
 }
 
 .special:hover{
