@@ -1,23 +1,16 @@
-<h1>Listing filterlists</h1>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Regexp</th>
-    <th>Ep</th>
-  </tr>
 
 <% @filterlists.each do |filterlist| %>
-  <tr>
-    <td><%=h filterlist.name %></td>
-    <td><%=h filterlist.regexp %></td>
-    <td><%=h filterlist.ep %></td>
-    <td><%= link_to 'Show', filterlist %></td>
-    <td><%= link_to 'Edit', edit_filterlist_path(filterlist) %></td>
-    <td><%= link_to 'Destroy', filterlist, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+    <div class="thename">  <%=h filterlist.name %> <%=h filterlist.ep %>
+			<%=  link_to  filterlist.regexp, filterlist, :class =>"theadress"   %>
+	</div>
+	<p></p>
+    <%= link_to 'Show', filterlist, :class=>"special" %>
+    <%= link_to 'Edit', edit_filterlist_path(filterlist), :class=>"special" %>
+    <%= link_to 'Destroy', filterlist, :confirm => 'Are you sure?', :method => :delete , :class=>"special" %>
+    <br/>
 <% end %>
-</table>
+
 
 <br />
 
