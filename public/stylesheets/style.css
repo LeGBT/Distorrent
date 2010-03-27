@@ -112,37 +112,42 @@ footer{
 }
 
 a.theadress{
-   display:inline-block;
-  	//display:inline;
-	-webkit-transition-property:width;
+  // display:inline-block;
+ // 	display:inline;
+	/* -webkit-transition-property:width;
     -moz-transition-property:width;
     -webkit-transition-timing-function:ease-out;
     -moz-transition-timing-function:ease-out;
     -webkit-transition-duration:0.2s;
-    -moz-transition-duration:0.2s;
-	opacity:1;
-	width: 1px;
-	overflow: hidden;
+    -moz-transition-duration:0.2s; */
+	opacity:0;
+	//padding:0px; 
+	//width: 10%; 
+	display:none;
+	overflow: hidden; 
 }
 
 .thename{
 	display:inline-block;
-	-webkit-transition-property:width;
+	 -webkit-transition-property:width;
     -moz-transition-property:width;
     -webkit-transition-timing-function:ease-out;
     -moz-transition-timing-function:ease-out;
     -webkit-transition-duration:0.2s;
-    -moz-transition-duration:0.2s;
-    width:100px;
+    -moz-transition-duration:0.2s;  
+    //width:100%;  
+    padding:1px; 
 }
 
 .thename:hover{
-	width:500px;
+	// width:10em;
+	//padding:1px;
+	width:10em;
 	}
 
 .thename:hover a.theadress{
-	width: 300px;
-   //display:inline;
+//	width: 100%;
+   display:inline-block;
    opacity:0.6;
    color:#100;
 }
