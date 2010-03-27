@@ -124,6 +124,8 @@ footer{
  	padding:0px; 
  	width:1px;
 	overflow: hidden; 
+	text-decoration:none;
+	white-space:nowrap;
 }
 
 .thename{
