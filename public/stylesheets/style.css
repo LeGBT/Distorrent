@@ -122,6 +122,13 @@ footer{
 }
 
 .special{
+	-webkit-transition-property:color,background-Color;
+    -moz-transition-property:color,background-Color;
+    -webkit-transition-timing-function:ease-out;
+    -moz-transition-timing-function:ease-out;
+    -webkit-transition-duration:0.2s;
+    -moz-transition-duration:0.2s;
+
     color:#fff;
     background-Color:#022;
 }
@@ -130,5 +137,6 @@ footer{
     -webkit-box-shadow: 0px 0px 3px #000;
     -moz-box-shadow: 0px 0px 3px #000;
     text-shadow: 0px 0px 0px #000;
+    background-color:#055;
 }
 
