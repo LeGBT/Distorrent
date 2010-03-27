@@ -15,7 +15,7 @@ body, p, ol, td {
 	/*height:100%; */
 	margin-left:auto;
 	margin-right:auto;
-	width:800px;
+	width:1024px;
 }
 	
 #cadre { 
@@ -112,12 +112,30 @@ footer{
 }
 
 .theadress{
-   display:none;
+	display:inline-block;
+	display: -moz-inline-stack;
+	-webkit-transition-property:width;
+    -moz-transition-property:width;
+    -webkit-transition-timing-function:ease-out;
+    -moz-transition-timing-function:ease-out;
+    -webkit-transition-duration:0.4s;
+    -moz-transition-duration:0.4s;
+ 	opacity:0; 
+ 	padding:0px; 
+ 	width:1px;
+	overflow: hidden; 
 }
 
+.thename{
+	display:inline-block;  
+    padding:1px; 
+}
+
+
 .thename:hover a.theadress{
-   display:inline;
-   opacity:0.6;
+	width: 400px;
+   display:inline-block;
+   opacity:0.7;
    color:#100;
 }
 
@@ -126,8 +144,8 @@ footer{
     -moz-transition-property:color,background-Color;
     -webkit-transition-timing-function:ease-out;
     -moz-transition-timing-function:ease-out;
-    -webkit-transition-duration:0.2s;
-    -moz-transition-duration:0.2s;
+    -webkit-transition-duration:0.3s;
+    -moz-transition-duration:0.3s;
 
     color:#fff;
     background-Color:#022;
@@ -137,7 +155,7 @@ footer{
     -webkit-box-shadow: 0px 0px 3px #000;
     -moz-box-shadow: 0px 0px 3px #000;
     text-shadow: 0px 0px 0px #000;
-    background-color:#055;
+    background-color:#077;
 }
 
 
