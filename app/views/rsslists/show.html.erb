@@ -1,13 +1,18 @@
 <p>
-  <b>Name:</b>
-  <%=h @rsslist.name %>
+	<div class='simple'>
+  		<b>Name:</b>
+ 		<%=h @rsslist.name %>
+ 	</div>
 </p>
 
 <p>
-  <b>Adress:</b>
-  <%=h @rsslist.adress %>
+	<div class='simple'>
+		<b>Adress:</b>
+		<%=h @rsslist.adress %>
+	</div>
 </p>
+<br/>
 
 
-<%= link_to 'Edit', edit_rsslist_path(@rsslist) %> |
-<%= link_to 'Back', rsslists_path %>
+<%= link_to 'Edit', edit_rsslist_path(@rsslist) , :class=> 'special' %>
+<%= link_to 'Back', rsslists_path , :class=> 'special' %>

@@ -1,5 +1,3 @@
-<h1>Editing rsslist</h1>
-
 <% form_for(@rsslist) do |f| %>
   <%= f.error_messages %>
 
@@ -16,5 +14,5 @@
   </p>
 <% end %>
 
-<%= link_to 'Show', @rsslist %> |
-<%= link_to 'Back', rsslists_path %>
+<%= link_to 'Show', @rsslist , :class=> 'special' %> 
+<%= link_to 'Back', rsslists_path , :class=> 'special' %>

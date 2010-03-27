@@ -1,7 +1,8 @@
-<h1>Distorrent</h1>
-
-scan effectué :
-<%=h @nbrss %> rss.
+<div class='simple'>
+	<b>scan effectué :
+		<%=h @nbrss %> rss.
+	</b>
+</div>
 <% @result.each {|b| %>
 <p><%=h b %></p>
 <% } %>
