@@ -31,7 +31,7 @@ body, p, ol, td {
 
 header{
     display:block;
-    padding-bottom:5em;
+    padding-bottom:3em;
 }
 
 nav{
@@ -161,14 +161,6 @@ footer{
     background-color:#077;
 }
 
-
-
-
-
-
-
-
-
 .simple{
 	display:inline;
     //text-shadow: 0px 0px 1px #444;
@@ -181,6 +173,23 @@ footer{
     color:#eff;
     -webkit-box-shadow: 0px 0px 3px #199;
     -moz-box-shadow: 0px 0px 3px #199;
+}
+
+
+.shinyfooter{
+	-webkit-transition-property:color,text-shadow;
+    -moz-transition-property:color,text-shadow;
+    -webkit-transition-timing-function:ease-out;
+    -moz-transition-timing-function:ease-out;
+    -webkit-transition-duration:0.3s;
+    -moz-transition-duration:0.3s;
+	text-shadow: 0px 0px 1px #022;
+	color:#000;
+}
+
+.shinyfooter:hover {
+	text-shadow: 0px 0px 20px #099;
+	color:#055;
 }
 
 
