@@ -20,9 +20,9 @@ class HomeController < ApplicationController
 							nect = Dl.nectar2(lelien).gsub('/','').gsub(/torrent.*/,'torrent')
 							puts "nect : #{nect}"
 							if (/\.torrent/i.match("#{nect}")) then
-								Dl::down2(lelien.to_s,"#{nect}")
+								Dl::down2(lelien.to_s,"./tmp/torrents/#{nect}")
 								puts "#{nect}"
-								system("open '#{nect}'")
+								system("open './tmp/torrents/#{nect}'")
 								afilter.update_attribute('ep',afilter.ep+1)
 								@result.push("#{afilter.name} #{afilter.ep}")
 							end				
