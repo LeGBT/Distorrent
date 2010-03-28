@@ -3,6 +3,7 @@
 <% @filterlists.each do |filterlist| %>
     <div class="thename">  <%=h filterlist.name %> <%=h filterlist.ep %>
 			<%=  link_to  filterlist.regexp, filterlist, :class =>"theadress"   %>
+			<%= link_to '+', filterlist, :method =>:inc  , :class=>"special" %>
 	</div>
 	<p></p>
 <% end %>

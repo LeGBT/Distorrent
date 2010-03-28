@@ -70,6 +70,22 @@ class FilterlistsController < ApplicationController
       end
     end
   end
+   
+  def inc
+    @filterlist = Filterlist.find(params[:id])
+
+    respond_to do |format|
+      if @filterlist.update_attribute(:ep =>1)
+        flash[:notice] = 'Filterlist was successfully increased.'
+        format.html { redirect_to(@filterlist) }
+        format.xml  { head :ok }
+      else
+        format.html { render :action => "edit" }
+        format.xml  { render :xml => @filterlist.errors, :status => :unprocessable_entity }
+      end
+    end
+  end
+   
 
   # DELETE /filterlists/1
   # DELETE /filterlists/1.xml

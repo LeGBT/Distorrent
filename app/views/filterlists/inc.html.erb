@@ -1,0 +1,27 @@
+Increased !
+<p>
+	<div class='simple'>
+		<b>Name:</b>
+		<%=h @filterlist.name %>
+	</div>
+</p>
+
+<p>
+	<div class='simple'>
+		<b>Regexp:</b>
+		<%=h @filterlist.regexp %>
+	</div>
+</p>
+
+<p>
+	<div class='simple'>
+		<b>Ep:</b>
+		<%=h @filterlist.ep %>
+	</div>
+</p>
+<p></p>
+<br/>
+
+<%= link_to 'Edit', edit_filterlist_path(@filterlist) , :class=> 'special' %> 
+<%= link_to 'Destroy', @filterlist, :confirm => 'Are you sure?', :method => :delete , :class=>"special" %>
+<%= link_to 'Back', filterlists_path , :class=> 'special' %>
