@@ -21,8 +21,8 @@ config.load_paths += %W(#{RAILS_ROOT}/disthorrent)
   # config.gem "aws-s3", :lib => "aws/s3"
 #require 'rufus/scheduler'
 #require 'httpclient'
-require 'distorrent/download'
-require 'distorrent/parsexml'
+require 'app/distorrent/download'
+require 'app/distorrent/parsexml'
 #require 'xml-object'
 #require 'xml-object/adapters/libxml'
 #config.gem 'sqlite3-ruby'
