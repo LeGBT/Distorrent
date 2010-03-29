@@ -3,8 +3,9 @@
 <% @filterlists.each do |filterlist| %>
     <div class="thename">  <%=h filterlist.name %> <%=h filterlist.ep %>
 			<%=  link_to  filterlist.regexp, filterlist, :class =>"theadress"   %>
-			<%= link_to '+', filterlist, :method =>:inc  , :class=>"special" %>
 	</div>
+	<%= link_to '+', {:controller=>"filterlists",:action=>"inc",:id=>filterlist}, :method =>:put  , :class=>"incdec" %>
+	<%= link_to '-', {:controller=>"filterlists",:action=>"dec",:id=>filterlist}, :method =>:put  , :class=>"incdec" %>
 	<p></p>
 <% end %>
 
