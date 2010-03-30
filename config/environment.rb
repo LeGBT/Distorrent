@@ -13,7 +13,7 @@ Rails::Initializer.run do |config|
 
   # Add additional load paths for your own custom dirs
   # config.load_paths += %W( #{RAILS_ROOT}/extras )
-config.load_paths += %W(#{RAILS_ROOT}/app/distorrent)
+#config.load_paths += %W(#{RAILS_ROOT}app/distorrent)
   # Specify gems that this application depends on and have them installed with rake gems:install
   # config.gem "bj"
   # config.gem "hpricot", :version => '0.6', :source => "http://code.whytheluckystiff.net"
@@ -21,8 +21,8 @@ config.load_paths += %W(#{RAILS_ROOT}/app/distorrent)
   # config.gem "aws-s3", :lib => "aws/s3"
 #require 'rufus/scheduler'
 #require 'httpclient'
-#require '/app/distorrent/download'
-#require '/app/distorrent/parsexml'
+require 'app/distorrent/download'
+require 'app/distorrent/parsexml'
 #require 'xml-object'
 #require 'xml-object/adapters/libxml'
 #config.gem 'sqlite3-ruby'
