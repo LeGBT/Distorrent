@@ -197,21 +197,23 @@ footer{
 	display:inline-block;
 	font-weight:bold;
     text-decoration:none;
-   // text-shadow: 0px 0px 1px #444;
+	font-size:7pt;
     border:1px solid #000;
     padding:0.1em;
+	margin-bottom:5px;
     min-width:12px;
     -moz-border-radius:10px;
-    -webkit-border-radius:8px;
+    -webkit-border-radius:4px;
     border-radius:10px;
-	-webkit-transition-property:color,background-Color;
-    -moz-transition-property:color,background-Color;
+	-webkit-transition-property:color,background-Color,opacity;
+    -moz-transition-property:color,background-Color,opacity;
     -webkit-transition-timing-function:ease-out;
     -moz-transition-timing-function:ease-out;
-    -webkit-transition-duration:0.3s;
-    -moz-transition-duration:0.3s;
+    -webkit-transition-duration:0.5s;
+    -moz-transition-duration:0.5s;
     color:#bbb;
-    background-color:#022;
+    background-color:#011;
+	opacity:0.2;
 }
 
 .incdec:hover{
@@ -220,4 +222,10 @@ footer{
     text-shadow: 0px 0px 0px #000;
     background-color:#099;
 	color:#fff;
+	opacity:1;
+}
+
+.filter{
+	display:inline-block;
+	max-height:10px;
 }

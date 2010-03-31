@@ -1,11 +1,13 @@
 
 
 <% @filterlists.each do |filterlist| %>
+<div class='filter'>
     <div class="thename">  <%=h filterlist.name %> <%=h filterlist.ep %>
 			<%=  link_to  filterlist.regexp, filterlist, :class =>"theadress"   %>
 	</div>
 	<%= link_to '+', {:controller=>"filterlists",:action=>"inc",:id=>filterlist}, :method =>:put  , :class=>"incdec" %>
 	<%= link_to '-', {:controller=>"filterlists",:action=>"dec",:id=>filterlist}, :method =>:put  , :class=>"incdec" %>
+</div>
 	<p></p>
 <% end %>
 
