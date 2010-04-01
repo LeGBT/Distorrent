@@ -7,7 +7,7 @@ class Rssread
 	def total
 		#puts parse.channel.title.inspect #each {|i| puts i.inspect}
 		unless (parse==nil) then
-			@total= parse.channel.item.count
+			@total= parse.channel.item.length
 		else
 			@total=0
 		end
