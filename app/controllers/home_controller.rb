@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
 	def scan
 		@rss = Rsslist.all
-		@nbrss = @rss.count
+		@nbrss = @rss.length
 		@filter = Filterlist.all
 		@result = []
 		@rss.each {|a|   
