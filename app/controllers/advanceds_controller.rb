@@ -1,0 +1,3 @@
+class AdvancedsController < ApplicationController
+
+end

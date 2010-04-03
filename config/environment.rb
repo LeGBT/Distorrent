@@ -5,7 +5,7 @@ RAILS_GEM_VERSION = '2.3.5' unless defined? RAILS_GEM_VERSION
 
 # Bootstrap the Rails environment, frameworks, and default configuration
 require File.join(File.dirname(__FILE__), 'boot')
-
+require 'yaml'
 Rails::Initializer.run do |config|
   # Settings in config/environments/* take precedence over those specified here.
   # Application configuration should go into files in config/initializers
@@ -30,7 +30,7 @@ config.gem 'rufus-scheduler', :lib=> "rufus/scheduler"
 config.gem 'httpclient'
 config.gem 'xml-object'
 config.gem "libxml-ruby", :lib=>'xml-object/adapters/libxml'
-
+APP_CONFIG = YAML::load(File.open("#{RAILS_ROOT}/config/prefs.yml"))
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named
   # config.plugins = [ :exception_notification, :ssl_requirement, :all ]

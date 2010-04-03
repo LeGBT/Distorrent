@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :advanceds
+
   map.resources :filterlists
 
   map.resources :rsslists
