@@ -1,4 +1,4 @@
-
-pref:
-  cmd: a
+--- 
+:pref: 
+  cmd: couillon
   logs: false
