@@ -2,12 +2,11 @@
 
 
   
-<%=h APP_CONFIG["pref"]["cmd"] %> Cmd
-Logs
+<%=h @prefs %>
 
 
 
 
 <br />
 
-<%= link_to 'New advanced', new_advanced_path %>
+<%= link_to 'New advanced', {:controller=>"Advanceds",:action=>"save"}, :method =>:put %>

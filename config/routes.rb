@@ -47,6 +47,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'
+  map.connect ':controller/:action/'
  # map.connect 'filterlists/inc/:id', {:controller => "filterlists", :action => "inc" }
  # map.connect 'filterlists/dec/:id', {:controller => "filterlists", :action => "dec" }
   map.root :controller => "home"

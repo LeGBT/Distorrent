@@ -30,7 +30,7 @@ config.gem 'rufus-scheduler', :lib=> "rufus/scheduler"
 config.gem 'httpclient'
 config.gem 'xml-object'
 config.gem "libxml-ruby", :lib=>'xml-object/adapters/libxml'
-APP_CONFIG = YAML::load(File.open("#{RAILS_ROOT}/config/prefs.yml"))
+  #APP_CONFIG = YAML::load(File.open("#{RAILS_ROOT}/config/prefs.yml"))
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named
   # config.plugins = [ :exception_notification, :ssl_requirement, :all ]
