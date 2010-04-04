@@ -74,14 +74,16 @@ class FilterlistsController < ApplicationController
   
   def inc
     @filterlist = Filterlist.find(params[:id])
-       @filterlist.update_attributes(:ep => @filterlist.ep+1)
-       render "inc"
+    @filterlist.update_attributes(:ep => @filterlist.ep+1)
+    @filterlists = Filterlist.all
+    render "index"
   end
   
   def dec
     @filterlist = Filterlist.find(params[:id])
-       @filterlist.update_attributes(:ep => @filterlist.ep-1)
-       render "inc"
+    @filterlist.update_attributes(:ep => @filterlist.ep-1)
+    @filterlists = Filterlist.all
+    render "index"
   end
    
 

@@ -19,7 +19,7 @@
 				<li><%= link_to 'RSS',rsslists_path , :class => controller_name=='rsslists' %></li>
 				<li><%= link_to 'Filters', filterlists_path, :class => controller_name=='filterlists'  %></li>
 				<li><%= link_to 'Scan', {:controller => "home" , :action => "scan" }, :class => controller_name=='home' %></li>
-				<li><%= link_to 'Advanced' %>
+				<li><%= link_to 'Advanced' ,{:controller => "advanceds",:action => "index"} , :class => controller_name=='advanceds' %></li>
 			</ul>	
 		</nav>
 	</header>

@@ -1,20 +1,22 @@
 class AdvancedsController < ApplicationController
-  
+
   def save
-    raw_config = File.open("#{RAILS_ROOT}/config/prefs.yml")
-    config = YAML.load(raw_config).symbolize_keys
-    config[:pref]["cmd"]='couillon'
-    File.open( "#{RAILS_ROOT}/config/prefs.yml", 'w' ) do |out|
-        YAML.dump(config, out)
+    tpref=pref.symbolize_keys
+    tpref[:pref]["cmd"]=params["cmd"]["f"]
+    if params["logs"]
+      tpref[:pref]["logs"]=1
+    else
+      tpref[:pref]["logs"]=nil
     end
-    @prefs=config[:pref]
+    File.open( "#{RAILS_ROOT}/config/prefs.yml", 'w' ) do |out|
+        YAML.dump(tpref, out)
+    end
+    @prefs=tpref[:pref]
     render 'index'
   end
 
   def index
-    raw_config = File.open("#{RAILS_ROOT}/config/prefs.yml")
-    config = YAML.load(raw_config).symbolize_keys
-    @prefs=config[:pref]
+    @prefs=pref.symbolize_keys[:pref]
     render 'index'
   end
 
