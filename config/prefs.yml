@@ -1,4 +1,4 @@
 --- 
 :pref: 
-  cmd: couillon
-  logs: false
+  cmd: "open "
+  logs: 1
