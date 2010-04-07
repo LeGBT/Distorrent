@@ -10,11 +10,14 @@ class HomeController < ApplicationController
 		rescue
 			puts $!	
 		else
-			unparse = Rssread.new(File.open("tmp/rss/#{a.id}.xml"))				
+		  f=File.open("tmp/rss/#{a.id}.xml")
+			unparse = Rssread.new(f)
+			f.close				
 			for z in 0..unparse.total-1 do								#parcour items du rss
 				@filter.each do |afilter|								#parcour mes filtres
 					@tempreg = "(#{afilter.regexp}[^1-9]*#{afilter.ep})"
 					if /#{@tempreg}/xi.match(unparse.title[z]) then
+					  puts unparse.link[z]
 					lelien=unparse.link[z].gsub(/&lt;/,'<').gsub(/&gt;/,'>').gsub(/&apos;/,'\'').gsub(/&quot;/,'"').gsub(/&amp;/,'&') #correction de l'url
 						unless (lelien=="no link") then
 							nect = Dl.nectar2(lelien).gsub('/','').gsub(/torrent.*/,'torrent')
@@ -34,15 +37,5 @@ class HomeController < ApplicationController
 			end
 		end
 		}
-
 	end
-	
-	def delamerde
-		puts "erf"
-	end
-	
-	def index
-		@truc = Rsslist.all
-	end
-	
 end

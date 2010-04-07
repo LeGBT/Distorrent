@@ -16,20 +16,14 @@ Rails::Initializer.run do |config|
 #config.load_paths += %W(#{RAILS_ROOT}app/distorrent)
   # Specify gems that this application depends on and have them installed with rake gems:install
   # config.gem "bj"
-  # config.gem "hpricot", :version => '0.6', :source => "http://code.whytheluckystiff.net"
-  # config.gem "sqlite3-ruby", :lib => "sqlite3"
   # config.gem "aws-s3", :lib => "aws/s3"
-#require 'rufus/scheduler'
-#require 'httpclient'
-require 'app/distorrent/download'
-require 'app/distorrent/parsexml'
-#require 'xml-object'
-#require 'xml-object/adapters/libxml'
-#config.gem 'sqlite3-ruby'
+config.gem "hpricot", :version => '0.8', :source => "http://code.whytheluckystiff.net"
+config.gem "sqlite3-ruby", :lib => "sqlite3"
 config.gem 'rufus-scheduler', :lib=> "rufus/scheduler"
 config.gem 'httpclient'
-config.gem 'xml-object'
-config.gem "libxml-ruby", :lib=>'xml-object/adapters/libxml'
+require 'app/distorrent/download'
+require 'app/distorrent/parsexml'
+
 
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named
