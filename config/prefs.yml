@@ -1,4 +1,4 @@
 --- 
 :pref: 
-  cmd: "open "
+  cmd: "echo "
   logs: 1

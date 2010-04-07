@@ -26,9 +26,15 @@
 	<section>
 		<p style="color: green"><%= flash[:notice] %></p>
 		<%= yield %>
-	</section>
 
 	<footer>
+		<div class= <%= "e"+ $prefs['logs'].to_s %> >
+			<% Loggy.new.lastdls.each do |l| %>	
+			<p>
+				<%= l %>
+			</p>
+			<% end %>
+		</div>
 		<p class='shinyfooter'> Contain some Alban Avenant inside </p>	
 	</footer>
 

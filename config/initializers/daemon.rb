@@ -1,6 +1,6 @@
 require 'app/distorrent/download'
 require 'app/distorrent/parsexml'
-require 'app/distorrent/logger'
+require 'app/distorrent/tlogger'
 
 
 scheduler = Rufus::Scheduler.start_new

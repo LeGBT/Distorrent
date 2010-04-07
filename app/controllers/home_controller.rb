@@ -18,10 +18,10 @@ class HomeController < ApplicationController
 					lelien=unparse.link[z].gsub(/&lt;/,'<').gsub(/&gt;/,'>').gsub(/&apos;/,'\'').gsub(/&quot;/,'"').gsub(/&amp;/,'&') #correction de l'url
 						unless (lelien=="no link") then
 							nect = Dl.nectar2(lelien).gsub('/','').gsub(/torrent.*/,'torrent')
-							puts "nect : #{nect}"
+						#	puts "nect : #{nect}"
 							if (/\.torrent/i.match("#{nect}")) then
 								Dl::down2(lelien.to_s,"./tmp/torrents/#{nect}")
-								puts "#{nect}"
+							#	puts "#{nect}"
 								cmd=pref.symbolize_keys[:pref]["cmd"]
 								system("#{cmd} './tmp/torrents/#{nect}'")
 								lgg=Loggy.new
