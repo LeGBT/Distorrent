@@ -7,7 +7,7 @@ class Rssread
 	def total
 		#puts parse.channel.title.inspect #each {|i| puts i.inspect}
 		unless (parse==nil) then
-			@total= parse.channel.item.length
+			@total= (parse/'channel'/'item').length
 		else
 			@total=0
 		end
@@ -15,12 +15,12 @@ class Rssread
 	
 	def initialize(file)
 		begin
-			@parse = XMLObject.new(file)
+			@parse = Hpricot::XML(file)
 			#parse.channel.item.each {|i| puts i.inspect}
-			@title = parse.channel.item.collect {|i| i.title}
-			@link = parse.channel.item.collect {|i| 
+			@title = (parse/'channel'/'item').collect {|i| (i/'title').inner_html}
+			@link = (parse/'channel'/'item').collect {|i| 
 			begin
-				i.link
+			(i/'link').inner_html
 			rescue
 				"no link"
 			end	
@@ -35,7 +35,5 @@ class Rssread
 		@parse
 	end
 end
-	#unx = XMLObject.new(File.open('3.xml'))
-	#puts unx.channel.item[5].title
-	#puts unx.channel.item[5].link
+
 
