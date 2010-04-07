@@ -21,15 +21,13 @@ Rails::Initializer.run do |config|
   # config.gem "aws-s3", :lib => "aws/s3"
 #require 'rufus/scheduler'
 #require 'httpclient'
-require 'app/distorrent/download'
-require 'app/distorrent/parsexml'
 #require 'xml-object'
 #require 'xml-object/adapters/libxml'
 #config.gem 'sqlite3-ruby'
 config.gem 'rufus-scheduler', :lib=> "rufus/scheduler"
 config.gem 'httpclient'
 config.gem 'xml-object'
-config.gem "libxml-ruby", :lib=>'xml-object/adapters/libxml'
+#config.gem "libxml-ruby", :lib=>'xml-object/adapters/libxml'
   #APP_CONFIG = YAML::load(File.open("#{RAILS_ROOT}/config/prefs.yml"))
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named

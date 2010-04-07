@@ -35,7 +35,3 @@ class Rssread
 		@parse
 	end
 end
-	#unx = XMLObject.new(File.open('3.xml'))
-	#puts unx.channel.item[5].title
-	#puts unx.channel.item[5].link
-

@@ -24,6 +24,8 @@ class HomeController < ApplicationController
 								puts "#{nect}"
 								cmd=pref.symbolize_keys[:pref]["cmd"]
 								system("#{cmd} './tmp/torrents/#{nect}'")
+								lgg=Loggy.new
+      					lgg.push(afilter.name+'  '+afilter.ep.to_s)
 								afilter.update_attribute('ep',afilter.ep+1)
 								@result.push("#{afilter.name} #{afilter.ep}")
 							end				
