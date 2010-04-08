@@ -1,5 +1,6 @@
 class HomeController < ApplicationController
 	def scan
+	  @prefs=pref.symbolize_keys[:pref]
 		@rss = Rsslist.all
 		@nbrss = @rss.length
 		@filter = Filterlist.all
@@ -45,6 +46,7 @@ class HomeController < ApplicationController
 	end
 	
 	def index
+	  @prefs=pref.symbolize_keys[:pref]
 		@truc = Rsslist.all
 	end
 	

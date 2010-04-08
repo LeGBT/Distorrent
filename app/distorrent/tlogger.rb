@@ -5,7 +5,8 @@ class Loggy
       File.new("#{RAILS_ROOT}/tmp/Logs/lastdls",'w')
     end
     f=File.open("#{RAILS_ROOT}/tmp/Logs/lastdls")
-		@lastdls = f.readlines.collect{|l| l}#[-10..-1]
+		a=f.readlines.collect{|l| l}
+		@lastdls=a[[-a.length,-20].max,10]
     f.close
   end
   def push(line)

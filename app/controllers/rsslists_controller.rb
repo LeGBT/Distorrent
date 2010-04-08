@@ -3,7 +3,7 @@ class RsslistsController < ApplicationController
   # GET /rsslists.xml
   def index
     @rsslists = Rsslist.all
-
+    @prefs=pref.symbolize_keys[:pref]
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @rsslists }
@@ -14,7 +14,7 @@ class RsslistsController < ApplicationController
   # GET /rsslists/1.xml
   def show
     @rsslist = Rsslist.find(params[:id])
-
+    @prefs=pref.symbolize_keys[:pref]
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @rsslist }
@@ -25,7 +25,7 @@ class RsslistsController < ApplicationController
   # GET /rsslists/new.xml
   def new
     @rsslist = Rsslist.new
-
+    @prefs=pref.symbolize_keys[:pref]
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @rsslist }
@@ -35,13 +35,14 @@ class RsslistsController < ApplicationController
   # GET /rsslists/1/edit
   def edit
     @rsslist = Rsslist.find(params[:id])
+    @prefs=pref.symbolize_keys[:pref]
   end
 
   # POST /rsslists
   # POST /rsslists.xml
   def create
     @rsslist = Rsslist.new(params[:rsslist])
-
+    @prefs=pref.symbolize_keys[:pref]
     respond_to do |format|
       if @rsslist.save
         flash[:notice] = 'Rsslist was successfully created.'
@@ -58,7 +59,7 @@ class RsslistsController < ApplicationController
   # PUT /rsslists/1.xml
   def update
     @rsslist = Rsslist.find(params[:id])
-
+    @prefs=pref.symbolize_keys[:pref]
     respond_to do |format|
       if @rsslist.update_attributes(params[:rsslist])
         flash[:notice] = 'Rsslist was successfully updated.'

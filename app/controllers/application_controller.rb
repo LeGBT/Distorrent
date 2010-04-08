@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   def pref
      raw_config = File.open("#{RAILS_ROOT}/config/prefs.yml")
      config = YAML.load(raw_config)
-     $prefs=config.symbolize_keys[:pref]
+     #$prefs=config.symbolize_keys[:pref]
      config
    end
    

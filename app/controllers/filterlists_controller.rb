@@ -1,9 +1,10 @@
 class FilterlistsController < ApplicationController
   # GET /filterlists
   # GET /filterlists.xml
+  
   def index
     @filterlists = Filterlist.all
-
+    @prefs=pref.symbolize_keys[:pref]
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @filterlists }
@@ -14,7 +15,7 @@ class FilterlistsController < ApplicationController
   # GET /filterlists/1.xml
   def show
     @filterlist = Filterlist.find(params[:id])
-
+    @prefs=pref.symbolize_keys[:pref]
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @filterlist }
@@ -25,7 +26,7 @@ class FilterlistsController < ApplicationController
   # GET /filterlists/new.xml
   def new
     @filterlist = Filterlist.new
-
+    @prefs=pref.symbolize_keys[:pref]
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @filterlist }
@@ -35,13 +36,14 @@ class FilterlistsController < ApplicationController
   # GET /filterlists/1/edit
   def edit
     @filterlist = Filterlist.find(params[:id])
+    @prefs=pref.symbolize_keys[:pref]
   end
 
   # POST /filterlists
   # POST /filterlists.xml
   def create
     @filterlist = Filterlist.new(params[:filterlist])
-
+    @prefs=pref.symbolize_keys[:pref]
     respond_to do |format|
       if @filterlist.save
         flash[:notice] = 'Filterlist was successfully created.'
@@ -58,7 +60,7 @@ class FilterlistsController < ApplicationController
   # PUT /filterlists/1.xml
   def update
     @filterlist = Filterlist.find(params[:id])
-
+    @prefs=pref.symbolize_keys[:pref]
     respond_to do |format|
       if @filterlist.update_attributes(params[:filterlist])
         flash[:notice] = 'Filterlist was successfully updated.'

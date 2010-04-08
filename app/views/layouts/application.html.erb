@@ -28,7 +28,7 @@
 		<%= yield %>
 
 	<footer>
-		<div class= <%= "e"+ $prefs['logs'].to_s %> >
+		<div class= <%= "e"+ @prefs['logs'].to_s %> >
 			<% Loggy.new.lastdls.each do |l| %>	
 			<p>
 				<%= l %>
