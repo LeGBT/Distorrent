@@ -1,5 +1,4 @@
 #!/usr/bin/env ruby
-puts "fuck you !"
 if File.exist?('fresh')
   then
   puts 'Application updated..'
@@ -13,6 +12,6 @@ if File.exist?('fresh')
   end
    File.delete('fresh')
 else
-  puts 'Dont cross the streams ...'
+  puts 'Il ne peux plus rien nous arriver d\'affreux maintenant ..'
 end
 exec "script/server"+" "+ARGV.to_s
