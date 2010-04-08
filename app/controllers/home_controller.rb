@@ -38,13 +38,9 @@ class HomeController < ApplicationController
 			end
 		end
 		}
+	end
+	
 
-	end
-	
-	def delamerde
-		puts "erf"
-	end
-	
 	def index
 	  @prefs=pref.symbolize_keys[:pref]
 		@truc = Rsslist.all

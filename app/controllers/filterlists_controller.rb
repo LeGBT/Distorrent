@@ -78,6 +78,7 @@ class FilterlistsController < ApplicationController
     @filterlist = Filterlist.find(params[:id])
     @filterlist.update_attributes(:ep => @filterlist.ep+1)
     @filterlists = Filterlist.all
+    @prefs=pref.symbolize_keys[:pref]
     render "index"
   end
   
@@ -85,6 +86,7 @@ class FilterlistsController < ApplicationController
     @filterlist = Filterlist.find(params[:id])
     @filterlist.update_attributes(:ep => @filterlist.ep-1)
     @filterlists = Filterlist.all
+    @prefs=pref.symbolize_keys[:pref]
     render "index"
   end
    
@@ -94,7 +96,7 @@ class FilterlistsController < ApplicationController
   def destroy
     @filterlist = Filterlist.find(params[:id])
     @filterlist.destroy
-
+    @prefs=pref.symbolize_keys[:pref]
     respond_to do |format|
       format.html { redirect_to(filterlists_url) }
       format.xml  { head :ok }

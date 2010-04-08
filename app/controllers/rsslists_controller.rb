@@ -77,7 +77,7 @@ class RsslistsController < ApplicationController
   def destroy
     @rsslist = Rsslist.find(params[:id])
     @rsslist.destroy
-
+    @prefs=pref.symbolize_keys[:pref]
     respond_to do |format|
       format.html { redirect_to(rsslists_url) }
       format.xml  { head :ok }
