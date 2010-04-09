@@ -2,7 +2,10 @@ class Loggy
   attr_reader	:lastdls
   def initialize
     unless File.exist?("#{RAILS_ROOT}/tmp/Logs/lastdls")
-      File.new("#{RAILS_ROOT}/tmp/Logs/lastdls",'w')
+     # File.new("#{RAILS_ROOT}/tmp/Logs/lastdls",'w')
+      f=File.open("#{RAILS_ROOT}/tmp/Logs/lastdls",'a')
+      f.puts("Lasts Dls were :")
+      f.close
     end
     f=File.open("#{RAILS_ROOT}/tmp/Logs/lastdls")
 		a=f.readlines.collect{|l| l}
