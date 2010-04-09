@@ -31,6 +31,7 @@ module Dl
 			end
 		rescue
 			puts "nectar error with #{url_str} : "+$!
+			"no link"
 		end	
 	end
 	
