@@ -16,12 +16,12 @@ module Dl
 			else
 				if HTTP::Status::successful?(theget.status) and (theget.header['Content-Type'][0] =~ /application.*/) then
 					if theget.header['Content-Disposition'][0] then
-						puts "good raw : #{theget.header['Content-Disposition'][0]}"
+					#	puts "good raw : #{theget.header['Content-Disposition'][0]}"
 						return theget.header['Content-Disposition'][0].gsub(/.*filename=\"/,'').gsub(/\"/,'')
 						 clnt.reset_all
 						#t
 					else
-						puts "louche : #{url_str}"
+					#	puts "louche : #{url_str}"
 						clnt.reset_all
 						URI.unescape(url_str.to_s.gsub(/.*\//,''))
 					end

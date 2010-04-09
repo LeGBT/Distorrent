@@ -36,4 +36,3 @@ class Rssread
 	end
 end
 
-

@@ -4,6 +4,17 @@
 class ApplicationController < ActionController::Base
   helper :all # include all helpers, all the time
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
+  
+  def pref
+     raw_config = File.open("#{RAILS_ROOT}/config/prefs.yml")
+     config = YAML.load(raw_config)
+     #$prefs=config.symbolize_keys[:pref]
+     config
+   end
+   
+
+   
+
 
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password

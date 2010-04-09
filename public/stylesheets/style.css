@@ -229,3 +229,20 @@ footer{
 	display:inline-block;
 	max-height:10px;
 }
+
+
+
+footer .e{
+	display:none;
+	margin-top:70px;
+	opacity:0.5;
+	
+}
+
+footer .e1{
+	display:block;
+	margin-top:70px;
+	opacity:0.5;
+}
+
+

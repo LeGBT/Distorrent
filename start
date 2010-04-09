@@ -1,0 +1,17 @@
+#!/usr/bin/env ruby
+if File.exist?('fresh')
+  then
+  puts 'Application updated..'
+  `rake db:migrate`
+  unless File.exist?('config/prefs.yml') 
+    then
+    f=File.open('config/prefs.yml','w')
+    a=['---',':pref:','  cmd: "echo "','  logs: 1']
+    a.each do |l| f.puts l end
+    f.close
+  end
+   File.delete('fresh')
+else
+  puts 'Il ne peux plus rien nous arriver d\'affreux maintenant ..'
+end
+exec "script/server"+" "+ARGV.to_s

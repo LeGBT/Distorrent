@@ -5,8 +5,8 @@
     <div class="thename">  <%=h filterlist.name %> <%=h filterlist.ep %>
 			<%=  link_to  filterlist.regexp, filterlist, :class =>"theadress"   %>
 	</div>
-	<%= link_to '+', {:controller=>"filterlists",:action=>"inc",:id=>filterlist}, :method =>:put  , :class=>"incdec" %>
-	<%= link_to '-', {:controller=>"filterlists",:action=>"dec",:id=>filterlist}, :method =>:put  , :class=>"incdec" %>
+	<%= link_to '+', filterlists_path+"/inc/"+filterlist.id.to_s , :class=>"incdec" %>
+	<%= link_to '-', filterlists_path+"/dec/"+filterlist.id.to_s  , :class=>"incdec" %>
 </div>
 	<p></p>
 <% end %>

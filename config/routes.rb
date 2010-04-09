@@ -1,5 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :filterlists
+  map.resources :advanceds,  :collection => { :save => :put}
+
+  map.resources :filterlists, :collection => { :inc => :put, :dec =>:put}
 
   map.resources :rsslists
 
@@ -45,6 +47,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'
+  map.connect 'advanceds/save/',:controller =>"advanced",:action=>"save"
  # map.connect 'filterlists/inc/:id', {:controller => "filterlists", :action => "inc" }
  # map.connect 'filterlists/dec/:id', {:controller => "filterlists", :action => "dec" }
   map.root :controller => "home"
