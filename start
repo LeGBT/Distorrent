@@ -6,7 +6,7 @@ if File.exist?('fresh')
   unless platform == 'mswin32'
   `rake db:migrate`
   else
-    system('cmd.exe /c ruby db:migrate')
+    system('cmd.exe /c ruby',' db:migrate')
   end
   unless File.exist?('config/prefs.yml') 
     then
@@ -22,6 +22,5 @@ end
 unless platform == 'mswin32'
   exec "script/server"+" "+ARGV.to_s
 else
-  system('cmd.exe /c ruby db:migrate')
-  system("cmd.exe /c ruby script/server"+" "+ARGV.to_s)
+  system('cmd.exe /c ruby','script/server'+' '+ARGV.to_s)
 end
