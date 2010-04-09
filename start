@@ -2,7 +2,12 @@
 if File.exist?('fresh')
   then
   puts 'Application updated..'
+  processor, platform, *rest = RUBY_PLATFORM.split("-")
+  unless platform == 'mswin32'
   `rake db:migrate`
+  else
+    system('start ruby db:migrate')
+  end
   unless File.exist?('config/prefs.yml') 
     then
     f=File.open('config/prefs.yml','w')
