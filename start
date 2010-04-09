@@ -17,7 +17,7 @@ if File.exist?('fresh')
   end
    File.delete('fresh')
 else
-  puts 'Il ne peux plus rien nous arriver d\'affreux maintenant'
+  puts 'Il ne peux plus rien nous arriver d affreux maintenant'
 end
 unless platform == 'mswin32'
   exec "script/server"+" "+ARGV.to_s
