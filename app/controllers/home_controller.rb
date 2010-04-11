@@ -5,12 +5,17 @@ class HomeController < ApplicationController
 		@nbrss = @rss.length
 		@filter = Filterlist.all
 		@result = []
+		threads = []
 		@rss.each {|a|   
 		begin
-			Dl::down2(a.adress.to_s,"tmp/rss/#{a.id}.xml")				#parcour rss
-		rescue
-			puts $!	
-		else
+		  threads << Thread.new{ 
+		    begin
+		      Dl::down2(a.adress.to_s,"tmp/rss/#{a.id}.xml")	
+		    rescue
+    			puts $!
+    		end
+		    }		#parcour rss
+  		threads.each { |aThread|  aThread.join }
 		  f=File.open("tmp/rss/#{a.id}.xml")
 			unparse = Rssread.new(f)
 			f.close				
@@ -40,7 +45,7 @@ class HomeController < ApplicationController
 				end
 			end
 		end
-		}
+		} 
 	end
 	def index
 	  @prefs=pref.symbolize_keys[:pref]
