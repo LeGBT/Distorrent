@@ -36,7 +36,6 @@ module Dl
 	end
 	
 	def Dl.down2(url_str,where)
-	  puts "I dl : #{url_str}"
 		begin
 			clnt = HTTPClient.new
 			url_str = URI.escape(url_str,"[]")
@@ -45,7 +44,6 @@ module Dl
 				contet = clnt.get_content(url_str)
 				open(where, "wb") { |files|
  				files.write(contet)}
- 				puts "I got #{url_str} ! "
  			else puts theget.status
  			end
  			clnt.reset_all
