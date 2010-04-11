@@ -9,8 +9,8 @@ class Loggy
     end
     f=File.open("#{RAILS_ROOT}/tmp/Logs/lastdls")
 		a=f.readlines.collect{|l| l}
-		#@lastdls=a[[-a.length,-20].max,10]
-		@lastdls=a[1,10].reverse
+		@lastdls=a[[-a.length,-10].max,10]
+		#@lastdls=a[1,10].reverse
     f.close
   end
   def push(line)
