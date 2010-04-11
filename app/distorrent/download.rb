@@ -48,7 +48,7 @@ module Dl
  			end
  			clnt.reset_all
  		rescue
- 			raise "Dl error : "+ $!
+ 			raise "Dl error with #{url_str} : "+ $!
  		end	
 	end
 end
