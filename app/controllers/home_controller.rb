@@ -30,7 +30,13 @@ class HomeController < ApplicationController
                     Dl::down2(lelien.to_s,"./tmp/torrents/#{nect}")
                     #	puts "#{nect}"
                     cmd=pref.symbolize_keys[:pref]["cmd"]
-                    system("#{cmd} './tmp/torrents/#{nect}'")
+		    if RUBY_PLATFORM =~ /mswin32/
+			    then
+				    system("#{cmd} '#{RAILS_ROOT}/tmp/torrents/#{nect}'")
+puts "#{RAILS_ROOT}/tmp/torrents/#{nect}'"
+		    else
+			    system("#{cmd} './tmp/torrents/#{nect}'")
+end
                     lgg=Loggy.new
                     lgg.push(afilter.name+'  '+afilter.ep.to_s)
                     increm.push([afilter.id,afilter.ep])
