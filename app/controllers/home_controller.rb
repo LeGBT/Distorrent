@@ -49,8 +49,12 @@ class HomeController < ApplicationController
 				end
 			}
 		} 
-		threads.each { |aThread|  aThread.join }
-		increm.uniq.each{|a| Filterlist.find(a[0]).update_attribute('ep', a[1]+1) }
+		begin
+			threads.each { |aThread|  aThread.join }
+			increm.uniq.each{|a| Filterlist.find(a[0]).update_attribute('ep', a[1]+1) }
+		rescue
+			puts 'encore une erreur hpricot a vu de nez '+$!
+		end
 	end
 	def index
 		@prefs=pref.symbolize_keys[:pref]
