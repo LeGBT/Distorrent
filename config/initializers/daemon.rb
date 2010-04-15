@@ -1,7 +1,7 @@
 require 'app/distorrent/download'
 require 'app/distorrent/parsexml'
 require 'app/distorrent/tlogger'
-require "Hpricot"
+require "Hpricot" #looks like this line is needed because of the threading in homecontroler
 
 scheduler = Rufus::Scheduler.start_new
 
