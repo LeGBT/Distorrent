@@ -15,4 +15,4 @@ if File.exist?('fresh')
 else
   puts 'Il ne peux plus rien nous arriver d\'affreux maintenant ..'
 end
-exec "script/server"+" "+ARGV.to_s
+exec "rails server"+" "+ARGV.to_s
