@@ -16,7 +16,7 @@ class Loggy
   def push(line)
     f=File.open("#{Rails.root}/tmp/Logs/lastdls",'a')
     t=Time.now
-    time=t.day.to_s+'/'+t.month.to_s+'/'+t.year.to_s+' '+t.hour.to_s+':'+t.min.to_s+':'+t.sec.to_s+"   "
+    time=t.day.to_s+'/'+t.month.to_s+'/'+t.year.to_s+' '+t.hour.to_s+':'+t.min.to_s+':'+t.sec.to_s
     f.puts(time+line)
     f.close
   end
