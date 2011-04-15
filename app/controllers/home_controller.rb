@@ -31,7 +31,7 @@ class HomeController < ApplicationController
 										#	puts "#{nect}"
 										cmd=pref.symbolize_keys[:pref]["cmd"]
 										if RUBY_PLATFORM =~ /mswin32/    then
-											system("#{cmd} #{RAILS_ROOT}/tmp/torrents/#{nect}")
+											system("#{cmd} #{Rails.root}/tmp/torrents/#{nect}")
 										else
 											system("#{cmd} './tmp/torrents/#{nect}'")
 										end

@@ -31,10 +31,10 @@ Rails::Initializer.run do |config|
   # Specify gems that this application depends on and have them installed with rake gems:install
   # config.gem "bj"
   # config.gem "aws-s3", :lib => "aws/s3"
-#config.gem "hpricot", :source => "http://code.whytheluckystiff.net"
-#config.gem "sqlite3-ruby", :lib => "sqlite3"
-#config.gem 'rufus-scheduler', :lib=> "rufus/scheduler"
-#config.gem 'httpclient'
+config.gem "hpricot", :source => "http://code.whytheluckystiff.net"
+config.gem "sqlite3-ruby", :lib => "sqlite3"
+config.gem 'rufus-scheduler', :lib=> "rufus/scheduler"
+config.gem 'httpclient'
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named
   # config.plugins = [ :exception_notification, :ssl_requirement, :all ]

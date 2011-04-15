@@ -8,7 +8,7 @@ class AdvancedsController < ApplicationController
     else
       tpref[:pref]["logs"]=nil
     end
-    File.open( "#{RAILS_ROOT}/config/prefs.yml", 'w' ) do |out|
+    File.open( "#{Rails.root}/config/prefs.yml", 'w' ) do |out|
         YAML.dump(tpref, out)
     end
     @prefs=tpref[:pref]

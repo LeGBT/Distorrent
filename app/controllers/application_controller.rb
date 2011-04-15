@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
   
   def pref
-     raw_config = File.open("#{RAILS_ROOT}/config/prefs.yml")
+     raw_config = File.open("#{Rails.root}/config/prefs.yml")
      config = YAML.load(raw_config)
      #$prefs=config.symbolize_keys[:pref]
      config
