@@ -1,0 +1,7 @@
+#!/bin/sh
+
+if [[ -s ~/.rvm/scripts/rvm ]]; then
+	. ~/.rvm/scripts/rvm
+fi
+rvm 1.9.2
+rails server
