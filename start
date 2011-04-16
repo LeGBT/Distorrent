@@ -15,5 +15,5 @@ if File.exist?('fresh')
 else
   puts 'Il ne peux plus rien nous arriver d\'affreux maintenant ..'
 end
-rvm 1.9.2
+rvm "1.9.2"
 exec "rails server"+" "+ARGV.to_s
