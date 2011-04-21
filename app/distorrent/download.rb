@@ -29,8 +29,8 @@ module Dl
 					raise "Url error not a torrent file :" + theget.header['Content-Type'][0].to_str
 				end
 			end
-		rescue
-			puts "nectar error with #{url_str} : "+$!
+		rescue RuntimeError => e
+			puts "nectar error with #{url_str} : "+e.to_s
 			"no link"
 		end	
 	end
