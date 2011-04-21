@@ -23,6 +23,10 @@ class HomeController < ApplicationController
 							if /#{@tempreg}/xi.match(unparse.title[z]) then
 								#puts unparse.link[z]
 								lelien=unparse.link[z].gsub(/<!\[CDATA\[/,'').gsub(/\]\]>/,'').gsub(/&lt;/,'<').gsub(/&gt;/,'>').gsub(/&apos;/,'\'').gsub(/&quot;/,'"').gsub(/&amp;/,'&') #correction de l'url
+								if lelien.include?("nyaa.eu")
+									then
+									lelien=lelien.gsub(/torrentinfo/,'download') #correction nyaa
+								end
 								unless (lelien=="no link") then
 									nect = Dl.nectar2(lelien).gsub('/','').gsub(/torrent.*/,'torrent')
 									#	puts "nect : #{nect}"

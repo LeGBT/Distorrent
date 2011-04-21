@@ -10,11 +10,11 @@ module Dl
 			url_str =  URI.escape(url_str,"[]") 
 			clnt = HTTPClient.new
 
-			if url_str.include?("nyaa.eu")
-				then
+			#if url_str.include?("nyaa.eu")
+			#	then
 			#	puts "laaaa"
-				url_str=url_str.gsub(/torrentinfo/,'download')
-			end
+			#	url_str=url_str.gsub(/torrentinfo/,'download')
+			#end
 
 			theget = clnt.get(url_str)
 			if HTTP::Status::redirect?(clnt.head(url_str).status_code) then
