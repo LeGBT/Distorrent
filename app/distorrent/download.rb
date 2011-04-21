@@ -9,6 +9,13 @@ module Dl
 		begin
 			url_str =  URI.escape(url_str,"[]") 
 			clnt = HTTPClient.new
+
+			if url_str.include?("nyaa.eu")
+				then
+			#	puts "laaaa"
+				url_str=url_str.gsub(/torrentinfo/,'download')
+			end
+
 			theget = clnt.get(url_str)
 			if HTTP::Status::redirect?(clnt.head(url_str).status_code) then
 				puts "redirect : #{theget.header['location'][0]}"
@@ -29,8 +36,8 @@ module Dl
 					raise "Url error not a torrent file :" + theget.header['Content-Type'][0].to_str
 				end
 			end
-		rescue RuntimeError => e
-			puts "nectar error with #{url_str} : "+e.to_s
+		rescue 
+			puts "nectar error with #{url_str} : "+$!.to_s
 			"no link"
 		end	
 	end
@@ -39,6 +46,7 @@ module Dl
 		begin
 			clnt = HTTPClient.new
 			url_str = URI.escape(url_str,"[]")
+		#	puts url_str
 			theget = clnt.get(url_str)
 			if theget.status.to_i < 400 then 
 				contet = clnt.get_content(url_str)
@@ -47,8 +55,8 @@ module Dl
  			else puts theget.status
  			end
  			clnt.reset_all
- 		rescue
- 			raise "Dl error with #{url_str} : "+ $!
+ 		rescue 
+ 			raise "Dl error with #{url_str} : "+ $!.to_s
  		end	
 	end
 end
