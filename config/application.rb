@@ -1,7 +1,7 @@
 require File.expand_path('../boot', __FILE__)
 require 'yaml'
 require 'rails/all'
-require 'Bundler'
+#require 'Bundler'
 
 Bundler.require(:default, Rails.env)
 

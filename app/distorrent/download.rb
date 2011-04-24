@@ -9,6 +9,7 @@ module Dl
 		begin
 			url_str =  URI.escape(url_str,"[]") 
 			clnt = HTTPClient.new
+			clnt.connect_timeout = 10
 			theget = clnt.get(url_str)
 			if HTTP::Status::redirect?(clnt.head(url_str).status_code) then
 				puts "redirect : #{theget.header['location'][0]}"
