@@ -10,6 +10,7 @@ class HomeController < ApplicationController
 		@rss.each {|a|   
 			threads << Thread.new{ 
 				begin
+				#	puts "begining to dl : #{a.adress.to_s}"
 					Dl::down2(a.adress.to_s,"tmp/rss/#{a.id}.xml")	
 				rescue
 					puts $!
@@ -50,6 +51,7 @@ class HomeController < ApplicationController
 							end
 						end
 					end
+				#	puts "#{a.adress.to_s} computed"
 				end
 			}
 		} 

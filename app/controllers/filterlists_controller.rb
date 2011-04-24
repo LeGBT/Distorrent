@@ -1,105 +1,74 @@
 class FilterlistsController < ApplicationController
-  # GET /filterlists
-  # GET /filterlists.xml
-  
-  def index
-    @filterlists = Filterlist.all
-    @prefs=pref.symbolize_keys[:pref]
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @filterlists }
-    end
-  end
 
-  # GET /filterlists/1
-  # GET /filterlists/1.xml
-  def show
-    @filterlist = Filterlist.find(params[:id])
-    @prefs=pref.symbolize_keys[:pref]
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @filterlist }
-    end
-  end
+	def index
+		@filterlists = Filterlist.all
+		@prefs=pref.symbolize_keys[:pref]
+		render :index
+	end
 
-  # GET /filterlists/new
-  # GET /filterlists/new.xml
-  def new
-    @filterlist = Filterlist.new
-    @prefs=pref.symbolize_keys[:pref]
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @filterlist }
-    end
-  end
+	def show
+		@filterlist = Filterlist.find(params[:id])
+		@prefs=pref.symbolize_keys[:pref]
+		render :show
+	end
 
-  # GET /filterlists/1/edit
-  def edit
-    @filterlist = Filterlist.find(params[:id])
-    @prefs=pref.symbolize_keys[:pref]
-  end
+	def new
+		@filterlist = Filterlist.new
+		@prefs=pref.symbolize_keys[:pref]
+	end
 
-  # POST /filterlists
-  # POST /filterlists.xml
-  def create
-    @filterlist = Filterlist.new(params[:filterlist])
-    @prefs=pref.symbolize_keys[:pref]
-    respond_to do |format|
-      if @filterlist.save
-        flash[:notice] = 'Filterlist was successfully created.'
-        format.html { redirect_to(@filterlist) }
-        format.xml  { render :xml => @filterlist, :status => :created, :location => @filterlist }
-      else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @filterlist.errors, :status => :unprocessable_entity }
-      end
-    end
-  end
+	def edit
+		@filterlist = Filterlist.find(params[:id])
+		@prefs=pref.symbolize_keys[:pref]
+		render :edit
+	end
 
-  # PUT /filterlists/1
-  # PUT /filterlists/1.xml
-  def update
-    @filterlist = Filterlist.find(params[:id])
-    @prefs=pref.symbolize_keys[:pref]
-    respond_to do |format|
-      if @filterlist.update_attributes(params[:filterlist])
-        flash[:notice] = 'Filterlist was successfully updated.'
-        format.html { redirect_to(@filterlist) }
-        format.xml  { head :ok }
-      else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @filterlist.errors, :status => :unprocessable_entity }
-      end
-    end
-  end
-   
-  
-  def inc
-    @filterlist = Filterlist.find(params[:id])
-    @filterlist.update_attributes(:ep => @filterlist.ep+1)
-    @filterlists = Filterlist.all
-    @prefs=pref.symbolize_keys[:pref]
-    render "index"
-  end
-  
-  def dec
-    @filterlist = Filterlist.find(params[:id])
-    @filterlist.update_attributes(:ep => @filterlist.ep-1)
-    @filterlists = Filterlist.all
-    @prefs=pref.symbolize_keys[:pref]
-    render "index"
-  end
-   
+	def create
+		@filterlist = Filterlist.new(params[:filterlist])
+		@prefs=pref.symbolize_keys[:pref]
+		if @filterlist.save
+			flash[:notice] = 'Filterlist was successfully created.'
+			redirect_to(@filterlist)
+		else
+			render :new
+		end
+	end
 
-  # DELETE /filterlists/1
-  # DELETE /filterlists/1.xml
-  def destroy
-    @filterlist = Filterlist.find(params[:id])
-    @filterlist.destroy
-    @prefs=pref.symbolize_keys[:pref]
-    respond_to do |format|
-      format.html { redirect_to(filterlists_url) }
-      format.xml  { head :ok }
-    end
-  end
+	def update
+		@filterlist = Filterlist.find(params[:id])
+		@prefs=pref.symbolize_keys[:pref]
+		if @filterlist.update_attributes(params[:filterlist])
+			flash[:notice] = 'Filterlist was successfully updated.'
+			redirect_to(@filterlist)
+		else
+			#render "edit" 
+			render :edit
+		end
+	end
+
+
+	def inc
+		@filterlist = Filterlist.find(params[:id])
+		@filterlist.update_attributes(:ep => @filterlist.ep+1)
+		@filterlists = Filterlist.all
+		@prefs=pref.symbolize_keys[:pref]
+		render "index"
+	end
+
+	def dec
+		@filterlist = Filterlist.find(params[:id])
+		@filterlist.update_attributes(:ep => @filterlist.ep-1)
+		@filterlists = Filterlist.all
+		@prefs=pref.symbolize_keys[:pref]
+		render "index"
+	end
+
+
+	def destroy
+		@filterlist = Filterlist.find(params[:id])
+		@filterlist.destroy
+		@prefs=pref.symbolize_keys[:pref]
+		flash[:notice] = 'Filter deleted.'
+		redirect_to(@filterlist)
+	end
 end
