@@ -10,7 +10,9 @@ module Dl
 			url_str =  URI.escape(url_str,"[]") 
 			clnt = HTTPClient.new
 			clnt.connect_timeout = 10
+			#puts "#{url_str} en dl..."
 			theget = clnt.get(url_str)
+			#puts "#{url_str} dl fini !"
 			if HTTP::Status::redirect?(clnt.head(url_str).status_code) then
 				puts "redirect : #{theget.header['location'][0]}"
 				nectar2(theget.header['location'][0], limit-1)
@@ -39,9 +41,11 @@ module Dl
 	def Dl.down2(url_str,where)
 		begin
 			clnt = HTTPClient.new
+			clnt.connect_timeout = 5
 			url_str = URI.escape(url_str,"[]")
-		#	puts url_str
+			#puts "#{url_str} en dl..."
 			theget = clnt.get(url_str)
+			#puts "#{url_str} dl fini !"
 			if theget.status.to_i < 400 then 
 				contet = clnt.get_content(url_str)
 				open(where, "wb") { |files|
