@@ -1,10 +1,5 @@
-
-
-
-module Dl
-
-	
-	def Dl.nectar2(url_str, limit = 20)
+class Downl
+	def nectar2(url_str, limit = 20)
 		if limit ==0 then raise "Nectar limit reached with : #{url_str} " end
 		begin
 			url_str =  URI.escape(url_str,"[]") 
@@ -19,12 +14,12 @@ module Dl
 			else
 				if HTTP::Status::successful?(theget.status) and (theget.header['Content-Type'][0] =~ /application.*/) then
 					if theget.header['Content-Disposition'][0] then
-					#	puts "good raw : #{theget.header['Content-Disposition'][0]}"
+						#	puts "good raw : #{theget.header['Content-Disposition'][0]}"
 						return theget.header['Content-Disposition'][0].gsub(/.*filename=\"/,'').gsub(/\"/,'')
-						 clnt.reset_all
+						clnt.reset_all
 						#t
 					else
-					#	puts "louche : #{url_str}"
+						#	puts "louche : #{url_str}"
 						clnt.reset_all
 						URI.unescape(url_str.to_s.gsub(/.*\//,''))
 					end
@@ -37,8 +32,8 @@ module Dl
 			"no link"
 		end	
 	end
-	
-	def Dl.down2(url_str,where)
+
+	def down2(url_str,where)
 		begin
 			clnt = HTTPClient.new
 			clnt.connect_timeout = 5
@@ -49,12 +44,12 @@ module Dl
 			if theget.status.to_i < 400 then 
 				contet = clnt.get_content(url_str)
 				open(where, "wb") { |files|
- 				files.write(contet)}
- 			else puts theget.status
- 			end
- 			clnt.reset_all
- 		rescue 
- 			raise "Dl error with #{url_str} : "+ $!.to_s
- 		end	
+					files.write(contet)}
+			else puts theget.status
+			end
+			clnt.reset_all
+		rescue 
+			raise "Dl error with #{url_str} : "+ $!.to_s
+		end	
 	end
 end
