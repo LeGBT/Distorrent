@@ -2,11 +2,10 @@ Distorrent is a simple, yet efficient, broadcatching application.
 
 Just run 
 
-$./start
+	rails server
 
-in the Distorrent directory which will check and create the require files if nesserary and then will automaticaly run script/server
+for scan scheduling run :
 
+	rails runner "HomeController.new.scan"
 
-Quick "how to use" :
-
-TODO
+enjoy !
