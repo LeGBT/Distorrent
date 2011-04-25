@@ -1,4 +1,5 @@
 class HomeController < ApplicationController
+	include Dl
 	def scan
 		@prefs=pref.symbolize_keys[:pref]
 		@rss = Rsslist.all
@@ -8,13 +9,10 @@ class HomeController < ApplicationController
 		threads = []
 		increm = []
 		@rss.each {|a|   
-			Loggy
-			Downl
 			threads << Thread.new{ 
 				begin
 					#puts "begining to dl : #{a.adress.to_s}"
-					dl=Downl.new
-					dl.down2(a.adress.to_s,"tmp/rss/#{a.id}.xml")	
+					Dl::down2(a.adress.to_s,"tmp/rss/#{a.id}.xml")	
 				rescue
 					puts $!
 				else
@@ -32,10 +30,10 @@ class HomeController < ApplicationController
 									lelien=lelien.gsub(/torrentinfo/,'download') #correction nyaa
 								end
 								unless (lelien=="no link") then
-									nect = dl.nectar2(lelien).gsub('/','').gsub(/torrent.*/,'torrent')
+									nect = Dl::nectar2(lelien).gsub('/','').gsub(/torrent.*/,'torrent')
 									#	puts "nect : #{nect}"
 									if (/\.torrent/i.match("#{nect}")) then
-										dl.down2(lelien.to_s,"./tmp/torrents/#{nect}")
+										Dl::down2(lelien.to_s,"./tmp/torrents/#{nect}")
 										#	puts "#{nect}"
 										cmd=pref.symbolize_keys[:pref]["cmd"]
 										if RUBY_PLATFORM =~ /mswin32/    then

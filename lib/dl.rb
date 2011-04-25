@@ -1,5 +1,5 @@
-class Downl
-	def nectar2(url_str, limit = 20)
+module Dl
+	def self.nectar2(url_str, limit = 20)
 		if limit ==0 then raise "Nectar limit reached with : #{url_str} " end
 		begin
 			url_str =  URI.escape(url_str,"[]") 
@@ -33,7 +33,7 @@ class Downl
 		end	
 	end
 
-	def down2(url_str,where)
+	def self.down2(url_str,where)
 		begin
 			clnt = HTTPClient.new
 			clnt.connect_timeout = 5
