@@ -1,0 +1,4 @@
+---
+:pref:
+  cmd: ! 'open '
+  logs: 1
